@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Your Event | Jabilli Banquets Hall</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #10102f;
+    --pink: #bb5470;
+    --gold: #dcb36a;
+    --cream: #fffaf6;
+    --text: #302a3b;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NAVBAR */
+.booking-header {
+    min-height: 78px;
+    padding: 12px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--navy);
+    position: relative;
+    z-index: 2;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+}
+
+.brand-symbol {
+    font-size: 37px;
+}
+
+.brand strong {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+    line-height: 0.95;
+}
+
+.brand small {
+    display: block;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.back-link {
+    color: white;
+    font-size: 13px;
+}
+
+.back-link:hover {
+    color: var(--gold);
+}
+
+/* HERO */
+.booking-hero {
+    min-height: 380px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 75px 20px 110px;
+    color: white;
+    background:
+        linear-gradient(rgba(19, 9, 24, 0.58), rgba(19, 9, 24, 0.66)),
+        url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=85")
+        center 55% / cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.hero-label {
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+.hero-content h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 7vw, 76px);
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.hero-content > p:not(.hero-label) {
+    max-width: 590px;
+    margin: auto;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.hero-decoration {
+    display: block;
+    margin-top: 22px;
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+/* MAIN */
+.booking-main {
+    width: min(1100px, 90%);
+    margin: -45px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* FORM CARD */
+.booking-card {
+    padding: 40px 6%;
+    background:
+        radial-gradient(ellipse at top, #fff 0%, #fffaf6 70%);
+    border: 1px solid #e6c78e;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(40, 22, 26, 0.12);
+    position: relative;
+}
+
+.booking-card::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(220, 179, 106, 0.45);
+    border-radius: 11px;
+    pointer-events: none;
+}
+
+.form-heading {
+    text-align: center;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.heading-flower {
+    color: var(--gold);
+    font-size: 35px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-heading > p {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.form-heading h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(29px, 4vw, 40px);
+    color: var(--navy);
+    font-weight: 400;
+    margin: 8px 0 15px;
+}
+
+.heading-line {
+    display: block;
+    width: 65px;
+    height: 1px;
+    background: var(--gold);
+    margin: auto;
+}
+
+/* FORM FIELDS */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 30px;
+    position: relative;
+}
+
+.form-group {
+    min-width: 0;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+.form-group label i {
+    color: var(--navy);
+    font-size: 16px;
+    width: 20px;
+}
+
+.form-group label span {
+    color: var(--pink);
+    margin-left: -7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    min-height: 49px;
+    padding: 13px 15px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--navy);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid #ded7d4;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #99949e;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 95px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(220, 179, 106, 0.16);
+}
+
+/* UNIQUE SUBMIT BUTTON */
+.submit-area {
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+.submit-button {
+    min-height: 58px;
+    padding: 14px 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    background: var(--navy);
+    border: 2px solid var(--gold);
+    border-radius: 35px;
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 0 rgba(16, 16, 47, 0.08);
+    transition: transform 0.25s, background 0.25s;
+}
+
+.submit-button i:first-child {
+    color: var(--gold);
+}
+
+.submit-button:hover {
+    background: var(--pink);
+    transform: translateY(-2px);
+}
+
+.privacy-note {
+    margin-top: 14px;
+    font-size: 11px;
+    color: #766e75;
+}
+
+.privacy-note i {
+    color: #a77748;
+    margin-right: 5px;
+}
+
+.form-status {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--pink);
+}
+
+/* BENEFITS */
+.booking-benefits {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    padding: 48px 0 42px;
+    text-align: center;
+}
+
+.booking-benefits article {
+    padding: 5px 12px;
+    border-right: 1px solid #eadccf;
+}
+
+.booking-benefits article:last-child {
+    border-right: none;
+}
+
+.booking-benefits article > span {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 12px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f8e6e2;
+    color: var(--pink);
+    font-size: 21px;
+}
+
+.booking-benefits h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    color: var(--navy);
+}
+
+.booking-benefits p {
+    font-size: 12px;
+    color: #807781;
+    margin-top: 4px;
+}
+
+/* FOOTER */
+.booking-footer {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 12px;
+}
+
+.footer-decoration {
+    color: var(--gold);
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .booking-header {
+        padding: 12px 5%;
+    }
+
+    .booking-hero {
+        min-height: 350px;
+    }
+
+    .booking-main {
+        width: 92%;
+    }
+
+    .booking-card {
+        padding: 35px 5%;
+    }
+
+    .form-grid {
+        gap: 20px;
+    }
+
+    .booking-benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 28px;
+    }
+
+    .booking-benefits article:nth-child(2) {
+        border-right: none;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .booking-header {
+        min-height: 70px;
+        padding: 12px 5%;
+    }
+
+    .brand-symbol {
+        font-size: 28px;
+    }
+
+    .brand strong {
+        font-size: 27px;
+    }
+
+    .brand small {
+        font-size: 8px;
+    }
+
+    .back-link {
+        font-size: 11px;
+    }
+
+    .booking-hero {
+        min-height: 330px;
+        padding: 60px 20px 90px;
+        background-position: center;
+    }
+
+    .hero-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+    }
+
+    .hero-content > p:not(.hero-label) {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .booking-main {
+        width: 92%;
+        margin-top: -35px;
+    }
+
+    .booking-card {
+        padding: 28px 20px;
+        border-radius: 12px;
+    }
+
+    .booking-card::before {
+        inset: 5px;
+    }
+
+    .form-heading {
+        margin-bottom: 25px;
+    }
+
+    .form-heading > p {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .form-heading h2 {
+        font-size: 31px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 13px;
+        min-height: 47px;
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 13px 12px;
+        gap: 9px;
+        font-size: 16px;
+    }
+
+    .booking-benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 10px;
+        padding: 35px 0;
+    }
+
+    .booking-benefits article {
+        padding: 0 5px;
+    }
+
+    .booking-benefits h3 {
+        font-size: 16px;
+    }
+
+    .booking-benefits p {
+        font-size: 11px;
+    }
+
+    .booking-footer {
+        font-size: 10px;
+        padding: 22px 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .back-link {
+        font-size: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 39px;
+    }
+
+    .booking-card {
+        padding: 25px 14px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="booking-header">
+        <a href="index.html" class="brand">
+            <span class="brand-symbol">✧</span>
+            <span>
+                <strong>Jabilli</strong>
+                <small>BANQUETS HALL</small>
+            </span>
+        </a>
+
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="booking-hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="hero-label">MAKE IT SPECIAL</p>
+
+            <h1>Book Your Event</h1>
+
+            <p>
+                Let us be a part of your special moments.
+                Fill in the details below and our team will
+                get in touch with you soon.
+            </p>
+
+            <span class="hero-decoration">✧ ─── ❧ ─── ✧</span>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <main class="booking-main">
+
+        <section class="booking-card">
+
+            <div class="form-heading">
+                <span class="heading-flower">✧</span>
+                <p>EVENT BOOKING FORM</p>
+                <h2>Your Dream Event Starts Here</h2>
+                <span class="heading-line"></span>
+            </div>
+
+            <form id="bookingForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fa-regular fa-user"></i>
+                            Full Name <span>*</span>
+                        </label>
+                        <input type="text" id="name" name="name"
+                               placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="fa-solid fa-phone"></i>
+                            Phone Number <span>*</span>
+                        </label>
+                        <input type="tel" id="phone" name="phone"
+                               placeholder="Enter phone number"
+                               pattern="[0-9+\-\s]{10,15}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fa-regular fa-envelope"></i>
+                            Email Address
+                        </label>
+                        <input type="email" id="email" name="email"
+                               placeholder="Enter your email (optional)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            Event Type <span>*</span>
+                        </label>
+                        <select id="event" name="event" required>
+                            <option value="">Select your event</option>
+                            <option>Wedding</option>
+                            <option>Engagement</option>
+                            <option>Reception</option>
+                            <option>Birthday Party</option>
+                            <option>Anniversary</option>
+                            <option>Corporate Event</option>
+                            <option>Family Function</option>
+                            <option>Other Celebration</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">
+                            <i class="fa-regular fa-calendar"></i>
+                            Preferred Date <span>*</span>
+                        </label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">
+                            <i class="fa-solid fa-users"></i>
+                            Expected Guests
+                        </label>
+                        <select id="guests" name="guests">
+                            <option value="">Select guest count</option>
+                            <option>Below 100</option>
+                            <option>100–300</option>
+                            <option>300–500</option>
+                            <option>500–1000</option>
+                            <option>More than 1000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="budget">
+                            <i class="fa-solid fa-wallet"></i>
+                            Approximate Budget
+                        </label>
+                        <select id="budget" name="budget">
+                            <option value="">Select your budget</option>
+                            <option>Below ₹50,000</option>
+                            <option>₹50,000–₹1,00,000</option>
+                            <option>₹1,00,000–₹3,00,000</option>
+                            <option>Above ₹3,00,000</option>
+                            <option>Need guidance</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            Additional Requirements
+                        </label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Tell us about your event, special requests or any other details..."></textarea>
+                    </div>
+
+                </div>
+
+                <div class="submit-area">
+                    <button type="submit" class="submit-button">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Submit Booking Enquiry
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <p class="privacy-note">
+                        <i class="fa-solid fa-lock"></i>
+                        Your information is safe with us.
+                    </p>
+                </div>
+
+                <p id="form-status" class="form-status" role="status"></p>
+
+            </form>
+        </section>
+
+        
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="booking-footer">
+        <div class="footer-decoration">────── ✧ ──────</div>
+        <p>© 2026 Jabilli Banquets Hall. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const dateInput = document.getElementById("date");
+
+        const today = new Date();
+        dateInput.min = new Date(
+            today.getTime() - today.getTimezoneOffset() * 60000
+        ).toISOString().split("T")[0];
+
+        document.getElementById("bookingForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const data = new FormData(this);
+
+            const message = [
+                "Hello Jabilli Banquets Hall!",
+                "I would like to enquire about booking your venue.",
+                "",
+                "Name: " + data.get("name"),
+                "Phone: " + data.get("phone"),
+                "Email: " + (data.get("email") || "Not provided"),
+                "Event: " + data.get("event"),
+                "Preferred Date: " + data.get("date"),
+                "Expected Guests: " + (data.get("guests") || "Not specified"),
+                "Budget: " + (data.get("budget") || "Not specified"),
+                "Requirements: " + (data.get("message") || "None")
+            ].join("\n");
+
+            // Replace with the actual venue WhatsApp number.
+            const whatsappNumber = "91XXXXXXXXXX";
+
+            if (!/^91\d{10}$/.test(whatsappNumber)) {
+                document.getElementById("form-status").textContent =
+                    "Please configure the venue WhatsApp number before submitting.";
+                return;
+            }
+
+            const url = "https://wa.me/" + whatsappNumber +
+                        "?text=" + encodeURIComponent(message);
+
+            window.open(url, "_blank");
+        });
+    </script>
+
+</body>
+</html>
