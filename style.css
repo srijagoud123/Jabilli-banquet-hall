@@ -3,1456 +3,1468 @@
 ========================================= */
 
 :root {
-  --pink: #bb5470;
-  --pink-dark: #a94460;
-  --cream: #fffaf6;
-  --blush: #fcf0ed;
-  --navy: #10102f;
-  --gold: #e7c66f;
-  --text: #302a2d;
-  --muted: #766b70;
-  --white: #ffffff;
-  --border: #eee1df;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 85px;
-}
-
-body {
-  font-family: "DM Sans", sans-serif;
-  color: var(--text);
-  background: var(--cream);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-img {
-  display: block;
-  width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input {
-  font: inherit;
-}
-
-.container {
-  width: min(1180px, 92%);
-  margin: 0 auto;
-}
-
-.eyebrow {
-  display: block;
-  color: var(--pink);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.pink-button,
-.gold-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 11px;
-  border-radius: 30px;
-  font-weight: 700;
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.pink-button {
-  padding: 13px 23px;
-  background: var(--pink);
-  color: var(--white);
-  font-size: 13px;
-}
-
-.pink-button:hover {
-  background: var(--pink-dark);
-  transform: translateY(-2px);
-}
-
-.gold-button {
-  padding: 12px 24px;
-  background: var(--gold);
-  color: #35251b;
-  font-size: 12px;
-}
-
-.gold-button:hover {
-  background: #f4d98b;
-  transform: translateY(-2px);
-}
-
-
-/* =========================================
-   2. HEADER AND NAVIGATION
-========================================= */
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--cream);
-  box-shadow: 0 2px 12px rgba(64, 36, 42, 0.07);
-}
-
-.navbar {
-  min-height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.brand-icon {
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--pink);
-  border-radius: 50%;
-  color: var(--pink);
-  display: grid;
-  place-items: center;
-  font-size: 22px;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-text strong {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 27px;
-  line-height: 1;
-  color: var(--navy);
-}
-
-.brand-text small {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 3px;
-}
-
-.brand-tagline {
-  margin-top: 4px;
-  font-size: 7px;
-  letter-spacing: 1px;
-  color: #857078;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: clamp(12px, 2vw, 25px);
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--pink);
-}
-
-.nav-links .nav-button {
-  display: inline-block;
-  padding: 11px 17px;
-  background: var(--pink);
-  color: var(--white);
-  border-radius: 30px;
-}
-
-.nav-links .nav-button:hover {
-  background: var(--pink-dark);
-  color: var(--white);
-}
-
-#menu-toggle {
-  display: none;
-}
-
-.menu-icon {
-  display: none;
-}
-
-
-/* =========================================
-   3. HERO SECTION
-========================================= */
-
-.hero {
-  min-height: 490px;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255, 246, 239, 0.95) 0%,
-      rgba(255, 242, 234, 0.80) 38%,
-      rgba(255, 242, 234, 0.28) 72%,
-      rgba(255, 242, 234, 0.08) 100%
-    ),
-    url("img/hero-img.jpg") center 52% / cover no-repeat;
-}
-
-.hero-content {
-  padding-top: 45px;
-  padding-bottom: 45px;
-}
-
-.hero-heading {
-  color: var(--pink-dark);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  margin-bottom: 16px;
-}
-
-.hero h1 {
-  max-width: 750px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(44px, 5.4vw, 70px);
-  font-weight: 700;
-  line-height: 1.02;
-  color: #292127;
-  margin-bottom: 20px;
-}
-
-.hero-description {
-  max-width: 470px;
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 25px;
-  color: #383034;
-}
-
-
-/* =========================================
-   4. JABILLI INTRODUCTION
-   Appears between Hero and Our Services
-========================================= */
-
-.intro-section {
-  padding: 34px 0;
-  background: #fffdfb;
-  border-bottom: 1px solid #f1e7e4;
-}
-
-.intro-content {
-  max-width: 900px;
-  text-align: center;
-}
-
-.intro-content h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(28px, 3.2vw, 39px);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--navy);
-  margin-bottom: 12px;
-}
-
-.intro-content > p:last-child {
-  max-width: 790px;
-  margin: 0 auto;
-  font-size: 14px;
-  line-height: 1.9;
-  color: var(--muted);
-}
-
-
-/* =========================================
-   5. OUR SERVICES
-========================================= */
-
-.services-section {
-  position: relative;
-  isolation: isolate;
-  padding: 55px 0;
-  color: var(--white);
-  text-align: center;
-  background: url("img/about-img.jpg") center 55% / cover no-repeat;
-}
-
-.services-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: rgba(30, 18, 31, 0.83);
-}
-
-.services-content {
-  position: relative;
-}
-
-.light-eyebrow {
-  color: var(--gold);
-}
-
-.services-content > h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(34px, 4vw, 44px);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
-
-.section-subtitle {
-  max-width: 650px;
-  margin: 0 auto;
-  font-size: 13px;
-  line-height: 1.8;
-  color: #f0e7ec;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 24px;
-  margin: 34px 0;
-}
-
-.service-item {
-  padding: 8px 6px;
-  text-align: center;
-}
-
-.service-icon {
-  width: 62px;
-  height: 62px;
-  display: grid;
-  place-items: center;
-  margin: 0 auto 14px;
-  border: 1px solid rgba(231, 198, 111, 0.85);
-  border-radius: 50%;
-  background: rgba(16, 16, 47, 0.65);
-  color: var(--gold);
-  font-size: 22px;
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.service-item:hover .service-icon {
-  background: #594125;
-  transform: translateY(-4px);
-}
-
-.service-item h3 {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 7px;
-}
-
-.service-item p {
-  font-size: 11px;
-  line-height: 1.7;
-  color: #e6dce0;
-}
-
-
-/* =========================================
-   6. WHAT WE OFFER
-========================================= */
-
-.offers-section {
-  padding: 65px 0 60px;
-  background:
-    radial-gradient(
-      circle at 10% 10%,
-      rgba(231, 198, 111, 0.09),
-      transparent 30%
-    ),
-    var(--cream);
-}
-
-.section-heading {
-  max-width: 750px;
-  margin: 0 auto 35px;
-  text-align: center;
-}
-
-.section-heading h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(34px, 4vw, 44px);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-
-.section-heading > p:last-child {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted);
-}
-
-/* Four cards in each desktop row */
-
-.offers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.offer-card {
-  position: relative;
-  min-width: 0;
-  min-height: 255px;
-  padding: 27px 20px 24px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid #eadfd8;
-  border-radius: 15px;
-  box-shadow: 0 5px 18px rgba(53, 36, 32, 0.045);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.offer-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--gold);
-  box-shadow: 0 12px 28px rgba(53, 36, 32, 0.10);
-}
-
-.offer-icon {
-  width: 64px;
-  height: 64px;
-  display: grid;
-  place-items: center;
-  margin: 0 auto 18px;
-  border-radius: 50%;
-  background: #f8ebeb;
-  border: 1px solid #f0dddd;
-  color: #b38a35;
-  font-size: 25px;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-.offer-card:hover .offer-icon {
-  background: var(--pink);
-  color: var(--white);
-}
-
-.offer-card h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #3b2b28;
-  margin-bottom: 12px;
-}
-
-.offer-card p {
-  font-size: 12px;
-  line-height: 1.85;
-  color: var(--muted);
-}
-
-.offers-cta {
-  margin-top: 35px;
-  text-align: center;
-}
-
-.offers-cta > p {
-  margin-bottom: 14px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-
-/* =========================================
-   7. CELEBRATION EXPERIENCE
-========================================= */
-
-.celebration-section {
-  width: 100%;
-  padding: 65px 5%;
-  background: #f0eeec;
-}
-
-.celebration-container {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  align-items: center;
-  gap: 40px;
-}
-
-.celebration-image {
-  position: relative;
-  width: 100%;
-  height: 450px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #f0e5e1;
-}
-
-.celebration-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.5s ease;
-}
-
-.celebration-image:hover img {
-  transform: scale(1.04);
-}
-
-.image-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 14px 16px;
-  background: rgba(16, 16, 47, 0.88);
-  color: var(--white);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.image-caption i {
-  color: var(--gold);
-}
-
-.celebration-content {
-  width: 100%;
-}
-
-.section-eyebrow {
-  display: block;
-  margin-bottom: 12px;
-  color: var(--pink);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-}
-
-.celebration-content h2 {
-  margin-bottom: 16px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.12;
-  color: var(--text);
-}
-
-.celebration-content h2 span {
-  display: block;
-  color: var(--pink);
-}
-
-.celebration-description {
-  margin-bottom: 25px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
-}
-
-.benefit-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 13px;
-  margin-bottom: 19px;
-}
-
-.benefit-icon {
-  width: 39px;
-  height: 39px;
-  min-width: 39px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #f7e5e9;
-  color: var(--pink);
-  font-size: 16px;
-  transition: 0.3s ease;
-}
-
-.benefit-item:hover .benefit-icon {
-  background: var(--pink);
-  color: var(--white);
-}
-
-.benefit-text h3 {
-  margin-bottom: 4px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--text);
-}
-
-.benefit-text p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-
-/* =========================================
-   8. VENUE GALLERY
-========================================= */
-
-.venues-section {
-  padding: 60px 0;
-  background: #fffaf5;
-}
-
-.venue-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.venue-card {
-  height: 210px;
-  display: block;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #f1e4df;
-  box-shadow: 0 4px 14px rgba(40, 25, 30, 0.08);
-}
-
-.venue-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.venue-card:hover img {
-  transform: scale(1.07);
-}
-
-
-/* =========================================
-   9. CLOSING BANNER
-========================================= */
-
-.elegance-banner {
-  position: relative;
-  isolation: isolate;
-  min-height: 260px;
-  padding: 45px 20px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  color: var(--white);
-  background: url("img/about-img.jpg") center 62% / cover no-repeat;
-}
-
-.banner-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: rgba(35, 16, 27, 0.78);
-}
-
-.banner-content {
-  max-width: 800px;
-}
-
-.banner-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
-}
-
-.banner-content h2 {
-  font-family: "Great Vibes", cursive;
-  font-size: clamp(43px, 5.5vw, 68px);
-  line-height: 1.15;
-  font-weight: 400;
-  color: var(--gold);
-  margin-bottom: 10px;
-}
-
-.banner-content > p:not(.banner-label) {
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  margin-bottom: 22px;
-}
-
-
-/* =========================================
-   10. FOOTER
-========================================= */
-
-.footer {
-  position: relative;
-  background: var(--navy);
-  color: #f6f0e8;
-  padding: 50px 0 0;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.7fr 1fr;
-  gap: 50px;
-  padding-bottom: 40px;
-}
-
-.footer-logo {
-  display: inline-flex;
-  flex-direction: column;
-  color: var(--gold);
-  margin-bottom: 15px;
-}
-
-.footer-brand-name {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 38px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.footer-brand-sub {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
-}
-
-.footer-brand > p {
-  max-width: 330px;
-  color: #d1cbd8;
-  font-size: 12px;
-  line-height: 1.9;
-}
-
-.footer-grid h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 18px;
-  color: #f7e5bd;
-}
-
-.footer-links ul {
-  list-style: none;
-}
-
-.footer-links li {
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: #d8d2df;
-  font-size: 12px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-contact a:hover {
-  color: var(--gold);
-}
-
-.footer-contact > p {
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  margin-bottom: 15px;
-  color: #d8d2df;
-  font-size: 12px;
-  line-height: 1.8;
-  overflow-wrap: anywhere;
-}
-
-.footer-contact > p i {
-  min-width: 15px;
-  color: var(--gold);
-  margin-top: 4px;
-}
-
-.contact-button {
-  display: inline-block;
-  margin-top: 7px;
-  padding: 11px 17px;
-  border: 1px solid var(--gold);
-  border-radius: 25px;
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 600;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.contact-button:hover {
-  background: var(--gold);
-  color: var(--navy) !important;
-}
-
-.social-links {
-  display: flex;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.social-links a {
-  width: 37px;
-  height: 37px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(231, 198, 111, 0.6);
-  border-radius: 50%;
-  color: var(--gold);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.social-links a:hover {
-  background: var(--gold);
-  color: var(--navy);
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 16px 0;
-  text-align: center;
-}
-
-.footer-bottom p {
-  color: #c6bfce;
-  font-size: 11px;
-}
-
-.back-to-top {
-  position: absolute;
-  right: 25px;
-  bottom: 45px;
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  color: var(--gold);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.back-to-top:hover {
-  background: var(--gold);
-  color: var(--navy);
-}
-
-
-/* =========================================
-   11. SMALL DESKTOP AND TABLET
-   Four offer cards become two per row
-========================================= */
-
-@media (max-width: 1050px) {
-
-  .navbar {
-    gap: 12px;
+    --pink: #bb5470;
+    --pink-dark: #a94460;
+    --cream: #fffaf6;
+    --blush: #fcf0ed;
+    --navy: #10102f;
+    --gold: #e7c66f;
+    --text: #302a2d;
+    --muted: #766b70;
+    --white: #ffffff;
+    --border: #eee1df;
   }
-
-  .brand {
-    gap: 7px;
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-
-  .brand-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 19px;
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
   }
-
-  .brand-text strong {
-    font-size: 23px;
+  
+  body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
   }
-
-  .brand-text small {
-    font-size: 14px;
+  
+  img {
+    display: block;
+    width: 100%;
   }
-
-  .brand-tagline {
-    font-size: 6px;
-    letter-spacing: 0.5px;
+  
+  a {
+    color: inherit;
+    text-decoration: none;
   }
-
-  .nav-links {
-    gap: 11px;
+  
+  button,
+  input {
+    font: inherit;
   }
-
-  .nav-links a {
+  
+  .container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+  }
+  
+  .eyebrow {
+    display: block;
+    color: var(--pink);
     font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
   }
-
-  .nav-links .nav-button {
-    padding: 10px 12px;
+  
+  .pink-button,
+  .gold-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.3s ease;
   }
-
-  .services-grid {
-    gap: 15px;
+  
+  .pink-button {
+    padding: 13px 23px;
+    background: var(--pink);
+    color: var(--white);
+    font-size: 13px;
   }
-
-  .offers-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+  .pink-button:hover {
+    background: var(--pink-dark);
+    transform: translateY(-2px);
+  }
+  
+  .gold-button {
+    padding: 12px 24px;
+    background: var(--gold);
+    color: #35251b;
+    font-size: 12px;
+  }
+  
+  .gold-button:hover {
+    background: #f4d98b;
+    transform: translateY(-2px);
+  }
+  
+  
+  /* =========================================
+     2. HEADER AND NAVIGATION
+  ========================================= */
+  
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--cream);
+    box-shadow: 0 2px 12px rgba(64, 36, 42, 0.07);
+  }
+  
+  .navbar {
+    min-height: 82px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 20px;
   }
-
-  .offer-card {
-    min-height: 235px;
-    padding: 25px 22px;
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
   }
-
-  .celebration-container {
-    gap: 28px;
-  }
-
-  .celebration-image {
-    height: 390px;
-  }
-
-  .celebration-content h2 {
-    font-size: 34px;
-  }
-
-  .venue-card {
-    height: 175px;
-  }
-
-  .footer-grid {
-    gap: 30px;
-  }
-}
-
-
-/* =========================================
-   12. MOBILE NAVIGATION AND LAYOUT
-========================================= */
-
-@media (max-width: 760px) {
-
-  html {
-    scroll-padding-top: 72px;
-  }
-
-  .container {
-    width: 90%;
-  }
-
-  /* Navigation */
-
-  .navbar {
-    min-height: 72px;
-    flex-wrap: wrap;
-    padding: 10px 0;
-  }
-
-  .brand-icon {
-    width: 34px;
-    height: 34px;
-    font-size: 18px;
-  }
-
-  .brand-text strong {
-    font-size: 23px;
-  }
-
-  .brand-text small {
-    font-size: 14px;
-  }
-
-  .brand-tagline {
-    font-size: 5.5px;
-  }
-
-  .menu-icon {
-    display: grid;
-    place-items: center;
-    width: 40px;
-    height: 40px;
-    color: var(--pink);
-    font-size: 23px;
-    cursor: pointer;
-  }
-
-  .nav-links {
-    display: none;
-    width: 100%;
+  
+  .brand-text {
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 8px 0 12px;
   }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
+  
+  .brand-text strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    line-height: 1;
+    color: var(--navy);
   }
-
-  .nav-links li a {
-    display: block;
-    padding: 12px;
+  
+  .brand-text small {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 3px;
+  }
+  
+  .brand-tagline {
+    margin-top: 4px;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: #857078;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 2vw, 25px);
+    list-style: none;
+  }
+  
+  .nav-links a {
     font-size: 13px;
-    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.3s ease;
   }
-
+  
+  .nav-links a:hover {
+    color: var(--pink);
+  }
+  
   .nav-links .nav-button {
     display: inline-block;
-    margin-top: 8px;
-    padding: 12px 25px;
-    border-bottom: none;
+    padding: 11px 17px;
+    background: var(--pink);
+    color: var(--white);
+    border-radius: 30px;
   }
-
-  #menu-toggle:checked ~ .nav-links {
-    display: flex;
+  
+  .nav-links .nav-button:hover {
+    background: var(--pink-dark);
+    color: var(--white);
   }
-
-  /* Hero */
-
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  
+  /* =========================================
+     3. HERO SECTION
+  ========================================= */
+  
   .hero {
-    min-height: 390px;
+    min-height: 490px;
+    display: flex;
+    align-items: center;
     background:
       linear-gradient(
         90deg,
-        rgba(255, 246, 239, 0.95),
-        rgba(255, 242, 234, 0.78) 70%,
-        rgba(255, 242, 234, 0.40)
+        rgba(255, 246, 239, 0.95) 0%,
+        rgba(255, 242, 234, 0.80) 38%,
+        rgba(255, 242, 234, 0.28) 72%,
+        rgba(255, 242, 234, 0.08) 100%
       ),
-      url("img/hero-img.jpg") center / cover no-repeat;
+      url("img/hero-img.jpg") center 52% / cover no-repeat;
   }
-
+  
   .hero-content {
-    padding-top: 38px;
-    padding-bottom: 38px;
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
-
+  
   .hero-heading {
-    max-width: 330px;
-    font-size: 9px;
-    letter-spacing: 1.1px;
-    line-height: 1.8;
+    color: var(--pink-dark);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    margin-bottom: 16px;
   }
-
+  
   .hero h1 {
-    font-size: clamp(38px, 9vw, 49px);
-    line-height: 1.04;
+    max-width: 750px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(44px, 5.4vw, 70px);
+    font-weight: 700;
+    line-height: 1.02;
+    color: #292127;
+    margin-bottom: 20px;
   }
-
+  
   .hero-description {
-    max-width: 330px;
-    font-size: 12px;
+    max-width: 470px;
+    font-size: 15px;
     line-height: 1.8;
+    margin-bottom: 25px;
+    color: #383034;
   }
-
-  /* Introduction */
-
+  
+  
+  /* =========================================
+     4. INTRODUCTION
+  ========================================= */
+  
   .intro-section {
-    padding: 30px 0;
+    padding: 34px 0;
+    background: #fffdfb;
+    border-bottom: 1px solid #f1e7e4;
   }
-
+  
+  .intro-content {
+    max-width: 900px;
+    text-align: center;
+  }
+  
   .intro-content h2 {
-    font-size: 30px;
-  }
-
-  .intro-content > p:last-child {
-    font-size: 12px;
-    line-height: 1.9;
-  }
-
-  /* Services */
-
-  .services-section {
-    padding: 42px 0;
-  }
-
-  .services-content > h2 {
-    font-size: 34px;
-  }
-
-  .section-subtitle {
-    max-width: 360px;
-    font-size: 12px;
-    line-height: 1.8;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px 14px;
-    margin: 28px 0;
-  }
-
-  .service-item {
-    padding: 4px;
-  }
-
-  .service-item:last-child {
-    grid-column: 1 / -1;
-  }
-
-  .service-icon {
-    width: 54px;
-    height: 54px;
-    font-size: 20px;
-  }
-
-  .service-item h3 {
-    font-size: 12px;
-  }
-
-  .service-item p {
-    font-size: 10px;
-  }
-
-  /* What We Offer */
-
-  .offers-section {
-    padding: 43px 0;
-  }
-
-  .section-heading {
-    margin-bottom: 26px;
-  }
-
-  .section-heading h2 {
-    font-size: 34px;
-  }
-
-  .section-heading > p:last-child {
-    font-size: 12px;
-    line-height: 1.8;
-  }
-
-  /* Two cards per row on mobile */
-
-  .offers-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 13px;
-  }
-
-  .offer-card {
-    min-height: 230px;
-    padding: 20px 12px;
-    border-radius: 12px;
-  }
-
-  .offer-icon {
-    width: 49px;
-    height: 49px;
-    margin-bottom: 13px;
-    font-size: 20px;
-  }
-
-  .offer-card h3 {
-    font-size: 18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(28px, 3.2vw, 39px);
+    font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 9px;
+    color: var(--navy);
+    margin-bottom: 12px;
   }
-
-  .offer-card p {
-    font-size: 10px;
-    line-height: 1.75;
-  }
-
-  .offers-cta {
-    margin-top: 27px;
-  }
-
-  .offers-cta > p {
-    font-size: 12px;
-  }
-
-  .pink-button,
-  .gold-button {
-    font-size: 11px;
-    padding: 12px 17px;
-  }
-
-  /* Celebration section */
-
-  .celebration-section {
-    padding: 40px 5%;
-  }
-
-  .celebration-container {
-    grid-template-columns: 1fr;
-    gap: 27px;
-  }
-
-  .celebration-image {
-    height: 300px;
-  }
-
-  .section-eyebrow {
-    font-size: 10px;
-    letter-spacing: 1.4px;
-    line-height: 1.8;
-  }
-
-  .celebration-content h2 {
-    font-size: 34px;
-    line-height: 1.15;
-  }
-
-  .celebration-description {
-    font-size: 12px;
+  
+  .intro-content > p:last-child {
+    max-width: 790px;
+    margin: 0 auto;
+    font-size: 14px;
     line-height: 1.9;
+    color: var(--muted);
   }
-
-  .benefit-item {
-    gap: 11px;
-    margin-bottom: 17px;
+  
+  
+  /* =========================================
+     5. OUR SERVICES
+     DESKTOP: 4 CARDS PER ROW
+     TABLET: 4 CARDS PER ROW
+     MOBILE: 2 CARDS PER ROW
+  ========================================= */
+  
+  .services-section {
+    position: relative;
+    isolation: isolate;
+    padding: 55px 0;
+    color: var(--white);
+    text-align: center;
+    background: url("img/about-img.jpg") center 55% / cover no-repeat;
   }
-
-  .benefit-icon {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    font-size: 15px;
+  
+  .services-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(30, 18, 31, 0.83);
   }
-
-  .benefit-text h3 {
-    font-size: 19px;
+  
+  .services-content {
+    position: relative;
   }
-
-  .benefit-text p {
-    font-size: 11px;
+  
+  .light-eyebrow {
+    color: var(--gold);
   }
-
-  /* Gallery */
-
-  .venues-section {
-    padding: 42px 0;
+  
+  .services-content > h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(34px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
   }
-
-  .venue-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .venue-card {
-    height: 145px;
-    border-radius: 9px;
-  }
-
-  /* Closing banner */
-
-  .elegance-banner {
-    min-height: 220px;
-    padding: 35px 16px;
-  }
-
-  .banner-label {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .banner-content h2 {
-    font-size: 45px;
-  }
-
-  .banner-content > p:not(.banner-label) {
-    font-size: 12px;
+  
+  .section-subtitle {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 13px;
     line-height: 1.8;
+    color: #f0e7ec;
   }
-
-  /* Footer */
-
-  .footer {
-    padding-top: 38px;
+  
+  /* Main change: 4 equal columns */
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 22px;
+    margin: 34px 0;
+    align-items: stretch;
   }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 18px;
-    padding-bottom: 30px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  .footer-brand > p {
-    max-width: 100%;
-  }
-
-  .footer-grid h3 {
-    font-size: 20px;
-  }
-
-  .footer-links a,
-  .footer-contact > p {
-    font-size: 10px;
-  }
-
-  .footer-contact {
+  
+  .service-item {
     min-width: 0;
+    padding: 12px 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-
-  .contact-button {
-    font-size: 10px;
-    padding: 9px 11px;
+  
+  .service-icon {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 14px;
+    border: 1px solid rgba(231, 198, 111, 0.85);
+    border-radius: 50%;
+    background: rgba(16, 16, 47, 0.65);
+    color: var(--gold);
+    font-size: 22px;
+    transition: background 0.3s ease, transform 0.3s ease;
   }
-
-  .back-to-top {
-    right: 12px;
-    bottom: 48px;
-    width: 32px;
-    height: 32px;
+  
+  .service-item:hover .service-icon {
+    background: #594125;
+    transform: translateY(-4px);
   }
-}
-
-
-/* =========================================
-   13. SMALL MOBILE SCREENS
-========================================= */
-
-@media (max-width: 380px) {
-
-  .container {
-    width: 92%;
+  
+  .service-item h3 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
   }
-
-  .brand {
-    gap: 6px;
+  
+  .service-item p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #e6dce0;
   }
-
-  .brand-icon {
-    width: 30px;
-    height: 30px;
-    font-size: 15px;
+  
+  
+  /* =========================================
+     6. WHAT WE OFFER
+  ========================================= */
+  
+  .offers-section {
+    padding: 65px 0 60px;
+    background:
+      radial-gradient(
+        circle at 10% 10%,
+        rgba(231, 198, 111, 0.09),
+        transparent 30%
+      ),
+      var(--cream);
   }
-
-  .brand-text strong {
-    font-size: 21px;
+  
+  .section-heading {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    text-align: center;
   }
-
-  .brand-text small {
+  
+  .section-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(34px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  
+  .section-heading > p:last-child {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+  }
+  
+  .offer-card {
+    position: relative;
+    min-width: 0;
+    min-height: 255px;
+    padding: 27px 20px 24px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #eadfd8;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(53, 36, 32, 0.045);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .offer-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 12px 28px rgba(53, 36, 32, 0.10);
+  }
+  
+  .offer-icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #f8ebeb;
+    border: 1px solid #f0dddd;
+    color: #b38a35;
+    font-size: 25px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .offer-card:hover .offer-icon {
+    background: var(--pink);
+    color: var(--white);
+  }
+  
+  .offer-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #3b2b28;
+    margin-bottom: 12px;
+  }
+  
+  .offer-card p {
+    font-size: 12px;
+    line-height: 1.85;
+    color: var(--muted);
+  }
+  
+  .offers-cta {
+    margin-top: 35px;
+    text-align: center;
+  }
+  
+  .offers-cta > p {
+    margin-bottom: 14px;
+    color: var(--muted);
     font-size: 13px;
   }
-
-  .brand-tagline {
-    font-size: 4.8px;
-    letter-spacing: 0.35px;
+  
+  
+  /* =========================================
+     7. CELEBRATION EXPERIENCE
+  ========================================= */
+  
+  .celebration-section {
+    width: 100%;
+    padding: 65px 5%;
+    background: #f0eeec;
   }
-
-  .hero {
-    min-height: 355px;
+  
+  .celebration-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 40px;
   }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero-heading {
-    font-size: 8px;
-  }
-
-  .intro-content h2 {
-    font-size: 27px;
-  }
-
-  .services-content > h2 {
-    font-size: 30px;
-  }
-
-  .offers-grid {
-    gap: 10px;
-  }
-
-  .offer-card {
-    min-height: 235px;
-    padding: 18px 9px;
-  }
-
-  .offer-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 18px;
-  }
-
-  .offer-card h3 {
-    font-size: 16px;
-  }
-
-  .offer-card p {
-    font-size: 9px;
-  }
-
+  
   .celebration-image {
-    height: 250px;
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f0e5e1;
   }
-
+  
+  .celebration-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+  }
+  
+  .celebration-image:hover img {
+    transform: scale(1.04);
+  }
+  
+  .image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 14px 16px;
+    background: rgba(16, 16, 47, 0.88);
+    color: var(--white);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .image-caption i {
+    color: var(--gold);
+  }
+  
+  .celebration-content {
+    width: 100%;
+  }
+  
+  .section-eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--pink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+  }
+  
   .celebration-content h2 {
-    font-size: 30px;
+    margin-bottom: 16px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--text);
   }
-
+  
+  .celebration-content h2 span {
+    display: block;
+    color: var(--pink);
+  }
+  
+  .celebration-description {
+    margin-bottom: 25px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+  }
+  
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 19px;
+  }
+  
+  .benefit-icon {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f7e5e9;
+    color: var(--pink);
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+  
+  .benefit-item:hover .benefit-icon {
+    background: var(--pink);
+    color: var(--white);
+  }
+  
+  .benefit-text h3 {
+    margin-bottom: 4px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+  }
+  
+  .benefit-text p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  
+  
+  /* =========================================
+     8. VENUE GALLERY
+  ========================================= */
+  
+  .venues-section {
+    padding: 60px 0;
+    background: #fffaf5;
+  }
+  
+  .venue-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+  
   .venue-card {
-    height: 115px;
+    height: 210px;
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f1e4df;
+    box-shadow: 0 4px 14px rgba(40, 25, 30, 0.08);
   }
-
+  
+  .venue-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .venue-card:hover img {
+    transform: scale(1.07);
+  }
+  
+  
+  /* =========================================
+     9. CLOSING BANNER
+  ========================================= */
+  
+  .elegance-banner {
+    position: relative;
+    isolation: isolate;
+    min-height: 260px;
+    padding: 45px 20px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--white);
+    background: url("img/about-img.jpg") center 62% / cover no-repeat;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(35, 16, 27, 0.78);
+  }
+  
+  .banner-content {
+    max-width: 800px;
+  }
+  
+  .banner-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+  }
+  
   .banner-content h2 {
-    font-size: 38px;
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(43px, 5.5vw, 68px);
+    line-height: 1.15;
+    font-weight: 400;
+    color: var(--gold);
+    margin-bottom: 10px;
   }
-
+  
+  .banner-content > p:not(.banner-label) {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+  }
+  
+  
+  /* =========================================
+     10. FOOTER
+  ========================================= */
+  
+  .footer {
+    position: relative;
+    background: var(--navy);
+    color: #f6f0e8;
+    padding: 50px 0 0;
+  }
+  
   .footer-grid {
-    gap: 25px 12px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.7fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
   }
-
-  .footer-grid h3 {
-    font-size: 17px;
+  
+  .footer-logo {
+    display: inline-flex;
+    flex-direction: column;
+    color: var(--gold);
+    margin-bottom: 15px;
   }
-
+  
   .footer-brand-name {
-    font-size: 32px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
   }
-}
-
-
-/* =========================================
-   14. REDUCED MOTION ACCESSIBILITY
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
+  
+  .footer-brand-sub {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
   }
-
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+  
+  .footer-brand > p {
+    max-width: 330px;
+    color: #d1cbd8;
+    font-size: 12px;
+    line-height: 1.9;
   }
-}
+  
+  .footer-grid h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #f7e5bd;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: #d8d2df;
+    font-size: 12px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover,
+  .footer-contact a:hover {
+    color: var(--gold);
+  }
+  
+  .footer-contact > p {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 15px;
+    color: #d8d2df;
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+  }
+  
+  .footer-contact > p i {
+    min-width: 15px;
+    color: var(--gold);
+    margin-top: 4px;
+  }
+  
+  .contact-button {
+    display: inline-block;
+    margin-top: 7px;
+    padding: 11px 17px;
+    border: 1px solid var(--gold);
+    border-radius: 25px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background: var(--gold);
+    color: var(--navy) !important;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    width: 37px;
+    height: 37px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(231, 198, 111, 0.6);
+    border-radius: 50%;
+    color: var(--gold);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 16px 0;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    color: #c6bfce;
+    font-size: 11px;
+  }
+  
+  .back-to-top {
+    position: absolute;
+    right: 25px;
+    bottom: 45px;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .back-to-top:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  
+  
+  /* =========================================
+     11. TABLET AND SMALL DESKTOP
+  ========================================= */
+  
+  @media (max-width: 1050px) {
+  
+    .navbar {
+      gap: 12px;
+    }
+  
+    .brand {
+      gap: 7px;
+    }
+  
+    .brand-text strong {
+      font-size: 23px;
+    }
+  
+    .brand-text small {
+      font-size: 14px;
+    }
+  
+    .brand-tagline {
+      font-size: 6px;
+      letter-spacing: 0.5px;
+    }
+  
+    .nav-links {
+      gap: 11px;
+    }
+  
+    .nav-links a {
+      font-size: 11px;
+    }
+  
+    .nav-links .nav-button {
+      padding: 10px 12px;
+    }
+  
+    /* Keep 4 service cards in each tablet row */
+    .services-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px 12px;
+    }
+  
+    .service-item {
+      padding: 8px 4px;
+    }
+  
+    .service-item h3 {
+      font-size: 12px;
+    }
+  
+    .service-item p {
+      font-size: 11px;
+    }
+  
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      font-size: 20px;
+    }
+  
+    .offers-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+  
+    .offer-card {
+      min-height: 235px;
+      padding: 25px 22px;
+    }
+  
+    .celebration-container {
+      gap: 28px;
+    }
+  
+    .celebration-image {
+      height: 390px;
+    }
+  
+    .celebration-content h2 {
+      font-size: 34px;
+    }
+  
+    .venue-card {
+      height: 175px;
+    }
+  
+    .footer-grid {
+      gap: 30px;
+    }
+  }
+  
+  
+  /* =========================================
+     12. MOBILE LAYOUT
+  ========================================= */
+  
+  @media (max-width: 760px) {
+  
+    html {
+      scroll-padding-top: 72px;
+    }
+  
+    .container {
+      width: 90%;
+    }
+  
+    /* Navigation */
+  
+    .navbar {
+      min-height: 72px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+  
+    .brand-text strong {
+      font-size: 23px;
+    }
+  
+    .brand-text small {
+      font-size: 14px;
+    }
+  
+    .brand-tagline {
+      font-size: 5.5px;
+    }
+  
+    .menu-icon {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      color: var(--pink);
+      font-size: 23px;
+      cursor: pointer;
+    }
+  
+    .nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 8px 0 12px;
+    }
+  
+    .nav-links li {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-links li a {
+      display: block;
+      padding: 12px;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .nav-links .nav-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 12px 25px;
+      border-bottom: none;
+    }
+  
+    #menu-toggle:checked ~ .nav-links {
+      display: flex;
+    }
+  
+    /* Hero */
+  
+    .hero {
+      min-height: 390px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255, 246, 239, 0.95),
+          rgba(255, 242, 234, 0.78) 70%,
+          rgba(255, 242, 234, 0.40)
+        ),
+        url("img/hero-img.jpg") center / cover no-repeat;
+    }
+  
+    .hero-content {
+      padding-top: 38px;
+      padding-bottom: 38px;
+    }
+  
+    .hero-heading {
+      max-width: 330px;
+      font-size: 9px;
+      letter-spacing: 1.1px;
+      line-height: 1.8;
+    }
+  
+    .hero h1 {
+      font-size: clamp(38px, 9vw, 49px);
+      line-height: 1.04;
+    }
+  
+    .hero-description {
+      max-width: 330px;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+  
+    /* Introduction */
+  
+    .intro-section {
+      padding: 30px 0;
+    }
+  
+    .intro-content h2 {
+      font-size: 30px;
+    }
+  
+    .intro-content > p:last-child {
+      font-size: 12px;
+      line-height: 1.9;
+    }
+  
+    /* Services */
+  
+    .services-section {
+      padding: 42px 0;
+    }
+  
+    .services-content > h2 {
+      font-size: 34px;
+    }
+  
+    .section-subtitle {
+      max-width: 360px;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+  
+    /* Two cards per row on mobile */
+    .services-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px 14px;
+      margin: 28px 0;
+    }
+  
+    .service-item {
+      padding: 4px;
+    }
+  
+    /* Prevent the last card from stretching across the row */
+    .service-item:last-child {
+      grid-column: auto;
+    }
+  
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      font-size: 20px;
+    }
+  
+    .service-item h3 {
+      font-size: 12px;
+    }
+  
+    .service-item p {
+      font-size: 10px;
+    }
+  
+    /* What We Offer */
+  
+    .offers-section {
+      padding: 43px 0;
+    }
+  
+    .section-heading {
+      margin-bottom: 26px;
+    }
+  
+    .section-heading h2 {
+      font-size: 34px;
+    }
+  
+    .section-heading > p:last-child {
+      font-size: 12px;
+      line-height: 1.8;
+    }
+  
+    .offers-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+  
+    .offer-card {
+      min-height: 230px;
+      padding: 20px 12px;
+      border-radius: 12px;
+    }
+  
+    .offer-icon {
+      width: 49px;
+      height: 49px;
+      margin-bottom: 13px;
+      font-size: 20px;
+    }
+  
+    .offer-card h3 {
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 9px;
+    }
+  
+    .offer-card p {
+      font-size: 10px;
+      line-height: 1.75;
+    }
+  
+    .offers-cta {
+      margin-top: 27px;
+    }
+  
+    .offers-cta > p {
+      font-size: 12px;
+    }
+  
+    .pink-button,
+    .gold-button {
+      font-size: 11px;
+      padding: 12px 17px;
+    }
+  
+    /* Celebration */
+  
+    .celebration-section {
+      padding: 40px 5%;
+    }
+  
+    .celebration-container {
+      grid-template-columns: 1fr;
+      gap: 27px;
+    }
+  
+    .celebration-image {
+      height: 300px;
+    }
+  
+    .section-eyebrow {
+      font-size: 10px;
+      letter-spacing: 1.4px;
+      line-height: 1.8;
+    }
+  
+    .celebration-content h2 {
+      font-size: 34px;
+      line-height: 1.15;
+    }
+  
+    .celebration-description {
+      font-size: 12px;
+      line-height: 1.9;
+    }
+  
+    .benefit-item {
+      gap: 11px;
+      margin-bottom: 17px;
+    }
+  
+    .benefit-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      font-size: 15px;
+    }
+  
+    .benefit-text h3 {
+      font-size: 19px;
+    }
+  
+    .benefit-text p {
+      font-size: 11px;
+    }
+  
+    /* Gallery */
+  
+    .venues-section {
+      padding: 42px 0;
+    }
+  
+    .venue-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+  
+    .venue-card {
+      height: 145px;
+      border-radius: 9px;
+    }
+  
+    /* Closing banner */
+  
+    .elegance-banner {
+      min-height: 220px;
+      padding: 35px 16px;
+    }
+  
+    .banner-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+  
+    .banner-content h2 {
+      font-size: 45px;
+    }
+  
+    .banner-content > p:not(.banner-label) {
+      font-size: 12px;
+      line-height: 1.8;
+    }
+  
+    /* Footer */
+  
+    .footer {
+      padding-top: 38px;
+    }
+  
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px 18px;
+      padding-bottom: 30px;
+    }
+  
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  
+    .footer-brand > p {
+      max-width: 100%;
+    }
+  
+    .footer-grid h3 {
+      font-size: 20px;
+    }
+  
+    .footer-links a,
+    .footer-contact > p {
+      font-size: 10px;
+    }
+  
+    .footer-contact {
+      min-width: 0;
+    }
+  
+    .contact-button {
+      font-size: 10px;
+      padding: 9px 11px;
+    }
+  
+    .back-to-top {
+      right: 12px;
+      bottom: 48px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  
+  /* =========================================
+     13. SMALL MOBILE SCREENS
+  ========================================= */
+  
+  @media (max-width: 380px) {
+  
+    .container {
+      width: 92%;
+    }
+  
+    .brand {
+      gap: 6px;
+    }
+  
+    .brand-text strong {
+      font-size: 21px;
+    }
+  
+    .brand-text small {
+      font-size: 13px;
+    }
+  
+    .brand-tagline {
+      font-size: 4.8px;
+      letter-spacing: 0.35px;
+    }
+  
+    .hero {
+      min-height: 355px;
+    }
+  
+    .hero h1 {
+      font-size: 36px;
+    }
+  
+    .hero-heading {
+      font-size: 8px;
+    }
+  
+    .intro-content h2 {
+      font-size: 27px;
+    }
+  
+    .services-content > h2 {
+      font-size: 30px;
+    }
+  
+    .services-grid {
+      gap: 22px 9px;
+    }
+  
+    .service-item {
+      padding: 4px 2px;
+    }
+  
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      font-size: 18px;
+    }
+  
+    .service-item h3 {
+      font-size: 11px;
+    }
+  
+    .service-item p {
+      font-size: 9px;
+    }
+  
+    .offers-grid {
+      gap: 10px;
+    }
+  
+    .offer-card {
+      min-height: 235px;
+      padding: 18px 9px;
+    }
+  
+    .offer-icon {
+      width: 44px;
+      height: 44px;
+      font-size: 18px;
+    }
+  
+    .offer-card h3 {
+      font-size: 16px;
+    }
+  
+    .offer-card p {
+      font-size: 9px;
+    }
+  
+    .celebration-image {
+      height: 250px;
+    }
+  
+    .celebration-content h2 {
+      font-size: 30px;
+    }
+  
+    .venue-card {
+      height: 115px;
+    }
+  
+    .banner-content h2 {
+      font-size: 38px;
+    }
+  
+    .footer-grid {
+      gap: 25px 12px;
+    }
+  
+    .footer-grid h3 {
+      font-size: 17px;
+    }
+  
+    .footer-brand-name {
+      font-size: 32px;
+    }
+  }
+  
+  
+  /* =========================================
+     14. REDUCED MOTION ACCESSIBILITY
+  ========================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    html {
+      scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
