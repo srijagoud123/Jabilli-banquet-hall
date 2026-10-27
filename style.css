@@ -117,40 +117,34 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    
   }
   
   .brand {
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
-  }
-  
-  .brand-text {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .brand-text strong {
+    color: var(--black);
+}
+
+.brand-symbol {
+    font-size: 37px;
+}
+
+.brand strong {
+    display: block;
     font-family: "Cormorant Garamond", serif;
-    font-size: 27px;
-    line-height: 1;
-    color: var(--navy);
-  }
-  
-  .brand-text small {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 3px;
-  }
-  
-  .brand-tagline {
-    margin-top: 4px;
-    font-size: 7px;
-    letter-spacing: 1px;
-    color: #857078;
-  }
+    font-size: 34px;
+    line-height: 0.95;
+}
+
+.brand small {
+    display: block;
+    color: rgb(17, 17, 17);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
   
   .nav-links {
     display: flex;
